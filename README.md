@@ -18,4 +18,4 @@ Using the 2 Logitech cameras, I computed depth and disparity based on stereo pic
 * [@sadhanasharma](https://www.linkedin.com/in/sadhana-sharma-/)
 
 # License
-[Apache License 2.0]()
+[MIT License]()
