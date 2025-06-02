@@ -1,21 +1,110 @@
-# Depth Estimation using OpenCV
-In this project, I successfully implemented stereo vision algorithms using Python to achieve real-time depth estimation. The project focused on developing adaptive calibration processes to account for each camera's unique traits and variances, ensuring reliable depth estimates. To achieve this, I employed image rectification techniques to correct lens distortion and align left and right images accurately. Additionally, I maintained pixel correlation between the rectified images to enhance stereo matching.
-Using the 2 Logitech cameras, I computed depth and disparity based on stereo picture pairs. Thoroughly assessing the accuracy and precision of depth and disparity measurements, I was able to enhance the accuracy and applicability of the system in robotics, augmented reality, and autonomous vehicles. This project showcases my expertise in computer vision and my ability to develop innovative solutions that improve performance and accuracy.
+# Depth Estimation Using OpenCV
 
+A Python project for **real-time depth estimation** using stereo vision, leveraging OpenCV and live video from two cameras. This system demonstrates the practical use of computer vision to compute accurate depth and disparity maps — essential for robotics, augmented reality, and autonomous vehicle applications.
 
-# Tech Stack
- * Python, OpenCV, VS Code
+---
 
-# Methodology
- * Stereo Vision Algorithm Implementation: Implemented stereo vision algorithms using Python and OpenCV for real-time depth estimation.
- * Adaptive Calibration Process: Developed adaptive calibration processes to account for each camera's unique traits and variances.
- * Image Rectification: Employed image rectification techniques to correct lens distortion and align left and right images accurately.
- * Pixel Correlation Enhancement: Maintained pixel correlation between the rectified images to enhance stereo matching.
- * Disparity Computation: Computed depth and disparity based on stereo picture pairs captured with the 2 Logitech cameras.
- * Accuracy and Precision Assessment: Thoroughly assessed the accuracy and precision of depth and disparity measurements using the developed system.
+## Overview
 
-# Authors
-* [@sadhanasharma](https://www.linkedin.com/in/sadhana-sharma-/)
+This project implements stereo vision algorithms using Python to produce real-time depth maps from two synchronized cameras. It uses adaptive calibration, image rectification, and disparity computation to deliver robust and accurate depth information.
 
-# License
-[MIT License]()
+**Key Features:**
+- Real-time video capture from two cameras
+- Background removal for cleaner stereo matching
+- Image preprocessing and rectification
+- Stereo Semi-Global Block Matching (SGBM) for disparity and depth calculation
+- Visualization of disparity and depth maps
+- Average depth and disparity statistics printed to console
+
+---
+
+## Demo
+
+> **Note:** The code is designed for use with two connected cameras (e.g., Logitech webcams) and the `SelfiSegmentation` module from `cvzone`.
+
+---
+
+## Requirements
+
+- Python 3.7+
+- OpenCV (`opencv-python`)
+- numpy
+- cvzone
+- (Optional) Jupyter Notebook for experimentation
+
+Install all dependencies with:
+```bash
+pip install opencv-python numpy cvzone
+```
+
+---
+
+## Usage
+
+1. **Connect two cameras** to your computer.
+2. **Clone this repository** and navigate to the project directory.
+3. **Run the script:**  
+   ```bash
+   python stereo_vision_group5.py
+   # or use the .ipynb notebook in Google Colab or Jupyter
+   ```
+4. **Press 'q'** to exit the live display.
+
+---
+
+## How it Works
+
+1. **Camera Setup:**
+   - Captures video frames from two different cameras (ensure you use the correct device indices).
+   - Sets the frame size and FPS.
+
+2. **Background Removal:**
+   - Uses `cvzone.SelfiSegmentation` to remove the background for both frames, improving stereo matching.
+
+3. **Preprocessing:**
+   - Converts images to grayscale and applies smoothing.
+
+4. **Stereo Matching:**
+   - Uses OpenCV’s StereoSGBM algorithm to compute disparity and depth maps.
+
+5. **Visualization:**
+   - Displays both the grayscale disparity map and the colorized depth map in real time.
+
+6. **Statistics:**
+   - Prints average disparity and average depth values to the console.
+
+---
+
+## Methodology
+
+- **Stereo Vision Algorithm:** Real-time depth estimation using synchronized stereo images.
+- **Adaptive Calibration:** Each camera is calibrated to account for unique traits and variances.
+- **Image Rectification:** Corrects lens distortion for accurate stereo matching.
+- **Disparity Computation:** Computes depth from the stereo pairs using SGBM.
+- **Accuracy Assessment:** Evaluates the accuracy and precision of the system for practical use.
+
+---
+
+## Applications
+
+- Robotics navigation
+- Augmented reality
+- Autonomous vehicles
+- 3D scene reconstruction
+
+---
+
+## References
+
+- [OpenCV Documentation: Stereo Vision](https://docs.opencv.org/master/d9/d0c/group__calib3d.html)
+- [cvzone SelfiSegmentation](https://github.com/cvzone/cvzone)
+
+---
+
+## License
+
+MIT License
+
+---
+
+**Author:** [sadhanasharma26](https://github.com/sadhanasharma26)
